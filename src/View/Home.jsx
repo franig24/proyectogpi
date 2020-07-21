@@ -1,10 +1,8 @@
-/* eslint-disable no-lone-blocks */
 import React from 'react';
-import logo from '../logo.png';
+import logo from '../logo.svg';
 import '../css/Home.css';
+import Button from '@material-ui/core/Button';
 import history from '../history';
-import Grid from '@material-ui/core/Grid';
-import StyledButton from '../Component/Homepage/StyledButton'
 
 function Home() {
 
@@ -14,7 +12,7 @@ function Home() {
   }
   const redirectGrupo2 = () =>
   {
-    {/*history.push('/Grupo2')*/}
+    history.push('/Grupo2/')
   }
   const redirectGrupo3 = () =>
   {
@@ -22,48 +20,32 @@ function Home() {
   }
   const redirectGrupo4 = () =>
   {
-    {history.push('/Grupo4')}
+    {/*history.push('/Grupo4')*/}
   }
   const redirectGrupo5 = () =>
   {
     {/*history.push('/Grupo5')*/}
   }
 
-  
-
-  return ( 
-      <div className="home_wrapper">
+  return (
         
-        <div className="home_body">
+      <div className="App">
+        <div className="grupo-navbar">
+          <Button onClick={redirectGrupo1} variant="contained" color = "primary">Grupo1</Button>
+          <Button onClick={redirectGrupo2} variant="contained" color = "secondary">Grupo2</Button>
+          <Button onClick={redirectGrupo3} variant="contained" color = "primary">Grupo3</Button>
+          <Button onClick={redirectGrupo4} variant="contained" color = "secondary">Grupo4</Button>
+          <Button onClick={redirectGrupo5} variant="contained" color = "primary">Grupo5</Button>
+        </div>
+        <header className="Home-header">
         
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-          <Grid
-            container
-            spacing={1}
-            direction="column"
-            justify="flex-start"
-            alignItems="center"
-          >
-          <Grid item xs={12} width="100%">
-          <StyledButton onClick={redirectGrupo1} variant="contained" >Sistema de Seguimiento de Actividades en Casa</StyledButton>
-          </Grid>
-          <Grid item xs={12}>
-          <StyledButton onClick={redirectGrupo2} variant="contained">Grupo2</StyledButton>
-          </Grid>
-          <Grid item xs={12}>
-          <StyledButton onClick={redirectGrupo3} variant="contained">Grupo3</StyledButton>
-          </Grid>
-          <Grid item xs={12}>
-          <StyledButton onClick={redirectGrupo4} variant="contained">Agendamiento de Horas Médicas</StyledButton>
-          </Grid>
-          <Grid item xs={12}>
-          <StyledButton onClick={redirectGrupo5} variant="contained">Grupo5</StyledButton>
-          </Grid>
-        </Grid>
+            Home
           </p>
-        </div>
-      </div>  
+        </header>
+      
+    </div>  
     );
 }
 
